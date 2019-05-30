@@ -47,7 +47,7 @@ resource "aws_route_table" "main-public-rt" {
 	
 	route {
 		cidr_block = "0.0.0.0/0"
-		gateway_id = "${aws_internet_gateway.main-vpc-igw.id}"
+		network_interface_id = "${aws_instance.instance.primary_network_interface_id}"
 	}
 	
 	tags = {
